@@ -77,14 +77,8 @@ export const allCountriesWithSearch = async (
 ) => {
   const { capital, region, timezone } = req.query;
   try {
-    const response = await axios.get("https://restcountries.com/v3.1/all");
-    console.log("====================================");
-    console.log(response);
-    console.log("====================================");
+   const response = await axios.get("https://restcountries.com/v3.1/all");
     const countries = response.data;
-    console.log("====================================");
-    console.log(countries);
-    console.log("====================================");
     const results = countries
       .filter((country: any) => {
         const countryCapital = country.capital

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { axiosApi } from "../config/axiosConfig";
 type Country = {
   name?: string;
@@ -24,6 +25,6 @@ export const getCountriesWithRegionApi = async (region: string) => {
 };
 
 export const getCountryDetails = async (code: string | undefined) => {
-  const res = await axiosApi.get(`/countries/${code}`);
+  const res = await axios.get(`https://restcountries.com/v3.1/alpha/Us`);
   return res;
 };
